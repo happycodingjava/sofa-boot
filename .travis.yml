@@ -15,7 +15,8 @@ before_install:
 
 install:
 - mvn clean install -DskipTests -B -V
-- mvn test
+- mvn test -Dsurefire.runOrder=alphabetical
+- mvn test -Dsurefire.runOrder=random
 
 script:
 - sh ./tools/check_format.sh
